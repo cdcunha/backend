@@ -7,6 +7,8 @@ namespace SpaUserControl.Domain.Models
     public class User
     {
         #region Ctor
+        protected User() { } //Scopo protected para que somente o EntityFramework enxergue o construtor
+
         public User(string name, string email)
         {
             this.Name = name;

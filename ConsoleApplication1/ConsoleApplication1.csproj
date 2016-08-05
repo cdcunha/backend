@@ -64,6 +64,10 @@
       <Project>{C140D5A7-65B0-4D90-82D3-9D96792A4A8D}</Project>
       <Name>SpaUserControl.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SpaUserControl.Infraestructure\SpaUserControl.Infraestructure.csproj">
+      <Project>{7E8FE4BA-947A-4D15-ACAD-3828BD12E518}</Project>
+      <Name>SpaUserControl.Infraestructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
