@@ -1,4 +1,5 @@
 ﻿using SpaUserControl.Domain;
+using SpaUserControl.Domain.Contracts.Repositories;
 using SpaUserControl.Domain.Models;
 using SpaUserControl.Infraestructure.Repositories;
 using System;

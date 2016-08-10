@@ -13,6 +13,9 @@ namespace SpaUserControl.Domain.Models
         {
             this.Name = name;
             this.Email = email;
+            
+            //O ideal é fazer a validação do novo Password, pois num teste unitário será lançada uma exceção, caso haja alguma inconsistência
+            EmailAssertionConcern.AssertIsValid(this.Email);
         }
         #endregion
 
@@ -32,12 +35,18 @@ namespace SpaUserControl.Domain.Models
             AssertionConcern.AssertArgumentEquals(password, confirmPassword, Errors.PasswordDoesNotMatch);
 
             this.Password = PasswordAssertionConcern.Encrypt(password);
+
+            //O ideal é fazer a validação do novo Password, pois num teste unitário será lançada uma exceção, caso haja alguma inconsistência
+            PasswordAssertionConcern.AssertIsValid(this.Password);
         }
 
         public string ResetPassword()
         {
             string password = Guid.NewGuid().ToString().Substring(0, 8);
             this.Password = PasswordAssertionConcern.Encrypt(password);
+            
+            //O ideal é fazer a validação do novo Password, pois num teste unitário será lançada uma exceção, caso haja alguma inconsistência
+            PasswordAssertionConcern.AssertIsValid(this.Password);
 
             return password;
         }
@@ -45,6 +54,8 @@ namespace SpaUserControl.Domain.Models
         public void ChangeName(string name)
         {
             this.Name = name;
+            //O ideal é fazer a validação do novo nome, pois num teste unitário será lançada uma exceção, caso haja alguma inconsistência
+            AssertionConcern.AssertArgumentLength(this.Name, 3, 250, Errors.InvalidUserName);
         }
 
         public void Validate()

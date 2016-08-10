@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SpaUserControl.Domain.Models;
 using SpaUserControl.Infraestructure.Data;
+using SpaUserControl.Domain.Contracts.Repositories;
 
 namespace SpaUserControl.Infraestructure.Repositories
 {
